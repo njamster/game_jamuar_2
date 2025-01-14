@@ -20,8 +20,6 @@ func spawn() -> void:
 				player.position.x = -320
 		player.throw_to_player.connect(_on_throw_to_player)
 		add_child(player)
-		#Input.start_joy_vibration(player.id, 0.0, 0.8, 1.0)
-		#await get_tree().create_timer(1.0).timeout
 
 	assign_starting_player()
 
@@ -39,11 +37,11 @@ func _on_throw_to_player(thrower_id : int, target_id : int) -> void:
 	if target_id >= Global.PLAYER_COUNT:
 		return
 
-	#var thrower := get_child(thrower_id)
-	#var target := get_child(target_id)
+	var thrower := get_node_or_null("Player%s" % (thrower_id+1))
+	var target := get_node_or_null("Player%s" % (target_id+1))
 
-	var thrower := get_node("Player%s" % (thrower_id+1))
-	var target := get_node("Player%s" % (target_id+1))
+	if thrower == null or target == null:
+		return
 
 	var ball := preload("player/ball/main.tscn").instantiate()
 	ball.global_position = thrower.global_position
