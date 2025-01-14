@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://brf3byti1jnku"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_17cco"]
+
+[node name="Main" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17cco")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="PlayerCount" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Two" type="Button" parent="VBox/PlayerCount"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "2 Players"
+
+[node name="Three" type="Button" parent="VBox/PlayerCount"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "3 Players"
+
+[node name="Four" type="Button" parent="VBox/PlayerCount"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "4 Players"
+
+[node name="Credits" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Sounds from ZapSplat"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBox/PlayerCount/Two" to="." method="start_game" binds= [2]]
+[connection signal="pressed" from="VBox/PlayerCount/Three" to="." method="start_game" binds= [3]]
+[connection signal="pressed" from="VBox/PlayerCount/Four" to="." method="start_game" binds= [4]]
