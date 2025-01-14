@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmtvhqwrjfl8s"]
+
+[ext_resource type="Script" path="res://game/game_over_screen/main.gd" id="1_acjrr"]
+[ext_resource type="FontFile" uid="uid://bv1lbje08ni7s" path="res://theme/fonts/OpenSans-MediumItalic.ttf" id="2_fbjw8"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_acjrr")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Centered" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rows" type="VBoxContainer" parent="Centered"]
+layout_mode = 2
+theme_override_constants/separation = 96
+
+[node name="Heading" type="Label" parent="Centered/Rows"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+
+[node name="Reason" type="RichTextLabel" parent="Centered/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/italics_font = ExtResource("2_fbjw8")
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+fit_content = true
+
+[node name="Score" type="Label" parent="Centered/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 96
+text = "Score: 0"
+
+[node name="PressToRetry" type="Label" parent="Centered/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Press START + SELECT to Retry"

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://nbta2ynim2tv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7gke"]
+draw_center = false
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(1, 0.196078, 0, 0.392157)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yrbis"]
+normal = Vector2(0, 1)
+distance = -540.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fwd14"]
+normal = Vector2(-1, 0)
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y8443"]
+distance = -540.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nsfu2"]
+normal = Vector2(1, 0)
+distance = -960.0
+
+[node name="LevelBounds" type="Panel"]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7gke")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("WorldBoundaryShape2D_yrbis")
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("WorldBoundaryShape2D_fwd14")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("WorldBoundaryShape2D_y8443")
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+shape = SubResource("WorldBoundaryShape2D_nsfu2")

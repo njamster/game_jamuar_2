@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctksnysxv252a"]
+
+[ext_resource type="Script" path="res://game/player_container/player/hint/main.gd" id="1_56a3i"]
+
+[node name="Hint" type="Sprite2D"]
+z_index = 2
+position = Vector2(0, -32)
+script = ExtResource("1_56a3i")

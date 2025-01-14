@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://fk8mk54qyqby"]
+
+[ext_resource type="Texture2D" uid="uid://bgyndd7ffkfeu" path="res://game/enemy_container/enemy/images/sprite.png" id="1_lcrtj"]
+[ext_resource type="Script" path="res://game/enemy_container/enemy/main.gd" id="1_uvbef"]
+
+[sub_resource type="Curve" id="Curve_fr6ww"]
+min_value = 1.0
+max_value = 15.0
+_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8te2"]
+size = Vector2(16, 16)
+
+[sub_resource type="Curve" id="Curve_jad3e"]
+max_value = 15.0
+_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Enemy" type="Area2D" groups=["Enemies"]]
+script = ExtResource("1_uvbef")
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+emitting = false
+local_coords = true
+gravity = Vector2(0, -980)
+scale_amount_curve = SubResource("Curve_fr6ww")
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.501961, 0, 0.501961, 1)
+rotation = 0.785398
+scale = Vector2(3, 3)
+texture = ExtResource("1_lcrtj")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_o8te2")
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="DeathExplosion" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 16
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.8
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+scale_amount_curve = SubResource("Curve_jad3e")
+color = Color(0.501961, 0, 0.501961, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_exited"]

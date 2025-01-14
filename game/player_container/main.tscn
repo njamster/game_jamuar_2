@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://fnvat8bw4p3x"]
+
+[ext_resource type="Script" path="res://game/player_container/main.gd" id="1_vby4a"]
+
+[node name="Players" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_vby4a")
+RANDOM_STARTING_PLAYER = false

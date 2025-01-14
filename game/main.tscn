@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://fswhy2125we6"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_y4pbd"]
+[ext_resource type="PackedScene" uid="uid://nbta2ynim2tv" path="res://game/level_bounds/main.tscn" id="2_xu2ji"]
+[ext_resource type="PackedScene" uid="uid://b8lis7aq17fvx" path="res://game/enemy_container/main.tscn" id="3_6ej7x"]
+[ext_resource type="PackedScene" uid="uid://fnvat8bw4p3x" path="res://game/player_container/main.tscn" id="4_gmg4p"]
+[ext_resource type="PackedScene" uid="uid://cmtvhqwrjfl8s" path="res://game/game_over_screen/main.tscn" id="5_nt45u"]
+[ext_resource type="Script" path="res://game/camera.gd" id="5_ra7eq"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_y4pbd")
+
+[node name="LevelBounds" parent="." instance=ExtResource("2_xu2ji")]
+layout_mode = 1
+
+[node name="Enemies" parent="." instance=ExtResource("3_6ej7x")]
+
+[node name="Players" parent="." instance=ExtResource("4_gmg4p")]
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("5_ra7eq")
+
+[node name="GameOverScreen" parent="." instance=ExtResource("5_nt45u")]

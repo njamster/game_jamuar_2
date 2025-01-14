@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3atpn1nxkx7y"]
+
+[ext_resource type="Script" path="res://game/player_container/player/main.gd" id="1_5p2na"]
+[ext_resource type="Texture2D" uid="uid://cbpxi8tdut5x8" path="res://game/player_container/player/images/sprite.png" id="1_bj3tl"]
+[ext_resource type="PackedScene" uid="uid://ctksnysxv252a" path="res://game/player_container/player/hint/main.tscn" id="3_hbel6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ega0i"]
+radius = 15.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8in13"]
+
+[sub_resource type="Curve" id="Curve_iu67r"]
+max_value = 15.0
+_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody2D" groups=["Players"]]
+script = ExtResource("1_5p2na")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_bj3tl")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ega0i")
+
+[node name="Hint" parent="." instance=ExtResource("3_hbel6")]
+position = Vector2(0, -40)
+texture = SubResource("CompressedTexture2D_8in13")
+
+[node name="DeathExplosion" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 16
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.8
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+scale_amount_curve = SubResource("Curve_iu67r")
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

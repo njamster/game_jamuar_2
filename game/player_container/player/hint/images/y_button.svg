@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="y_button_filled.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="22.627417"
+     inkscape:cx="30.913825"
+     inkscape:cy="30.980116"
+     inkscape:window-width="1364"
+     inkscape:window-height="761"
+     inkscape:window-x="0"
+     inkscape:window-y="1104"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g1"
+     transform="translate(0,0.11636364)">
+    <path
+       stroke="none"
+       fill="#feb504"
+       d="M 56,32 Q 56,42 48.95,48.95 42,56 32,56 22.05,56 15,48.95 8,42 8,32 8,22.05 15,15 22.05,8 32,8 42,8 48.95,15 56,22.05 56,32 m -33,-7 7,7.9 V 42 h 4 V 32.9 L 41,25 v -1 l -2.25,-2 h -1.1 L 32,28.55 26.4,22 H 25.25 L 23,24 v 1"
+       id="path1" />
+  </g>
+  <path
+     style="fill:#1a1a1a;stroke-width:0.0441942"
+     d="m 30.007844,37.549632 v -4.567415 l -3.49134,-3.939667 -3.491339,-3.939667 v -0.48538 -0.48538 l 1.115902,-0.99542 1.115903,-0.995419 0.573155,0.01105 0.573154,0.01105 2.777141,3.248272 c 1.527427,1.786549 2.791845,3.253561 2.809816,3.260026 0.01797,0.0065 1.302216,-1.460229 2.853876,-3.259321 l 2.821199,-3.271074 0.535441,9.2e-5 0.535441,9.1e-5 1.112889,0.983229 1.112888,0.983229 8.7e-4,0.508233 8.7e-4,0.508233 -3.48901,3.933281 -3.489011,3.933282 -1.85e-4,4.563048 -1.84e-4,4.563049 h -1.988738 -1.988738 z"
+     id="path8" />
+</svg>
